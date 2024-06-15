@@ -1,50 +1,50 @@
 const quizData = [ 
     {
-        question: "who founded pakistan peoples party",
-        a: "nawaz sharif",
-        b: "imran khan",
-        c: "zulfiqar ali bhutto",
-        d: "quaid e azam",
+        question: "Who founded Pakistan Peoples Party?",
+        a: "Nawaz Sharif",
+        b: "Imran Khan",
+        c: "Zulfiqar Ali Bhutto",
+        d: "Quaid-e-Azam",
         correct: "c"
     },
     {
-        question: " current prime minister",
-        a: "imran khan",
-        b: "nawaz shareef",
-        c: "maryam nawaz",
-        d: "shebaz shareef",
+        question: "Who is the current Prime Minister?",
+        a: "Imran Khan",
+        b: "Nawaz Sharif",
+        c: "Maryam Nawaz",
+        d: "Shehbaz Sharif",
         correct: "d"
     },
     {
-        question: "which country have best relations with pakistan",
-        a: "usa",
-        b: "china",
-        c: "qatar",
-        d: "france",
+        question: "Which country has the best relations with Pakistan?",
+        a: "USA",
+        b: "China",
+        c: "Qatar",
+        d: "France",
         correct: "b"
     },
     {
-        question: "who is quaid e azam",
-        a: "founder of pakistan",
-        b: "army general",
-        c: "lawyer",
-        d: "engineer",
+        question: "Who is Quaid-e-Azam?",
+        a: "Founder of Pakistan",
+        b: "Army General",
+        c: "Lawyer",
+        d: "Engineer",
         correct: "a"
     },
     {
-        question: "what is capital of pakistan",
-        a: "islamabad",
-        b: "lahore",
-        c: "karachi",
-        d: "peshawer",
+        question: "What is the capital of Pakistan?",
+        a: "Islamabad",
+        b: "Lahore",
+        c: "Karachi",
+        d: "Peshawar",
         correct: "a"
     },
     {
-        question: "who founded pti",
-        a: "imran khan",
-        b: "bilawal bhutto",
-        c: "chahat fate ali khan",
-        d: "babar azam",
+        question: "Who founded PTI?",
+        a: "Imran Khan",
+        b: "Bilawal Bhutto",
+        c: "Chahat Fateh Ali Khan",
+        d: "Babar Azam",
         correct: "a"
     }
 ];
@@ -60,7 +60,6 @@ const option3 = document.getElementById('option-3');
 const option4 = document.getElementById('option-4');
 const submitBtn = document.getElementById('submit');
 
-// Load the current quiz question
 function loadQuiz() {
     deselectAnswers();
 
@@ -73,12 +72,10 @@ function loadQuiz() {
     option4.innerText = currentQuizData.d;
 }
 
-// Deselect previously selected answers
 function deselectAnswers() {
     answerEls.forEach(answerEl => answerEl.checked = false);
 }
 
-// Get the selected answer
 function getSelected() {
     let answer;
     answerEls.forEach(answerEl => {
@@ -89,10 +86,8 @@ function getSelected() {
     return answer;
 }
 
-// Load the first question
 loadQuiz();
 
-// Event listener for the submit button
 submitBtn.addEventListener('click', () => {
     const answer = getSelected();
 
@@ -106,13 +101,13 @@ submitBtn.addEventListener('click', () => {
         if (currentQuiz < quizData.length) {
             loadQuiz();
         } else {
-            // Show results
             document.getElementById('quiz').innerHTML = `
                 <h2>You answered ${score}/${quizData.length} questions correctly.</h2>
-                <button onclick="location.reload()">Reload</button>
+                <button class="reload-button" onclick="location.reload()">Reload</button>
             `;
         }
     } else {
         alert('Please select an answer before submitting!');
     }
 });
+
