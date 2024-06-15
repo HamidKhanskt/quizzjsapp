@@ -44,7 +44,7 @@ The Quiz App presents a series of multiple-choice questions to the user. Upon co
 
 1. *Clone the Repository*:
    ```bash
-   git clone https://github.com/Waqas-Gujjar/js-quiz-app.git
+   git clone https://github.com/HamidKhanskt/quizzjsapp.git
 
 ## File Structure
 quiz-app/
