@@ -131,3 +131,4 @@ submitBtn.addEventListener('click', () => {
 });
 
 loadQuiz();
+
